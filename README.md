@@ -1,7 +1,7 @@
 # React + Vite
 
-# npm install
-abrir como terminal com o comando do npm run dev
+1. instalar a pasta node_modules com o comando npm install
+2. abrir como terminal com o comando do npm run dev
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
