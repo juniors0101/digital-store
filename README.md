@@ -1,4 +1,4 @@
-# React + Vite
+# Digital Store
 
 1. instalar a pasta node_modules com o comando npm install
 2. abrir como terminal com o comando do npm run dev
