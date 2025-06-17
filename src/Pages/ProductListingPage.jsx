@@ -10,7 +10,7 @@ const ProductListingPage = () => {
                 <li><Link to={"/ProductViewPage/3/Puma"}>Puma</Link></li>
                 <li><Link to={"/ProductViewPage/4/New Balance"}>New Balance</Link></li>
                 <li><Link to={"/ProductViewPage/5/Asics"}>Asics</Link></li>
-                <li><Link to={"/ProductViewPage/6/Mizuno"}>Mizuno</Link></li>
+                <li><Link to={"/ProductViewPage/6/Mizuno"}>Mizuuno</Link></li>
                 <li><Link to={"/ProductViewPage/7/Brooks"}>Brooks</Link></li>
                 
             </ul>
