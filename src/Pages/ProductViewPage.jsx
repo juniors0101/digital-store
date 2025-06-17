@@ -1,9 +1,15 @@
+import { useParams } from "react-router-dom";
+
 const ProductViewPage = () => {
-    return ( 
+
+
+    const { id, nome } = useParams();
+
+    return (
         <>
-        <h1>Visualização do produto</h1>
+            <h1>Visualização do produto #{id} {nome}</h1>
         </>
-     );
+    );
 }
- 
+
 export default ProductViewPage;
