@@ -5,6 +5,7 @@ import ProductViewPage from "../Pages/ProductViewPage";
 import PageLayout from "../layouts/PageLayout";
 import NotFound from "../Pages/NotFound";
 
+
 const Paths = () => {
     return (
         <>
@@ -14,7 +15,7 @@ const Paths = () => {
                     <Route path="/" element={<PageLayout />}>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/produtos" element={<ProductListingPage />} />
-                        <Route path="/ProductViewPage/:id/:nome" element={<ProductViewPage />} />
+                        <Route path="/produto/:id/:nome" element={<ProductViewPage />} />
                     </Route>
                     <Route path="*" element={<NotFound />}/>
                 </Routes>
