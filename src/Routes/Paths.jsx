@@ -23,7 +23,7 @@ const Paths = () => {
                     </Route>
                     <Route path="*" element={<NotFound />}/>
                 </Routes>
-
+    
             </BrowserRouter>
         </>
     );

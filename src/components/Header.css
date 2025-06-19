@@ -32,20 +32,27 @@
     flex-grow: 1;
     max-width: 500px;
     min-width: 250px;
+    position: relative;
 }
 
 .search-input {
     width: 100%;
     background-color: #f6f6f6;
-    border-radius: 8px;
+    border-radius: 4px;
     border: none;
-    padding: 10px 16px;
-    font-size: 14px;
+    padding: 12px 44px 12px 16px; /* espaço à direita para a lupa */
+    font-size: 15px;
+    line-height: 1.2;
 }
 
 .search-icon {
-    color: #aaa;
-    margin-right: 12px;
+    position: absolute;
+    right: 12px;
+    top: 60%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+    font-size: 1rem;
 }
 
 .user-actions {
