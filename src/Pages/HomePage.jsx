@@ -25,7 +25,7 @@ const HomePage = () => {
   const slideImages = [
     { src: homeSlide1 },
     { src: homeSlide2 },
-    // Add more as needed
+  
   ];
 
   const highlightedCollections = [
@@ -39,10 +39,7 @@ const HomePage = () => {
     { name: 'K-Swiss V8 - Masculino', image: productThumb2, price: 150, priceDiscount: null },
     { name: 'K-Swiss V8 - Masculino', image: productThumb3, price: 220, priceDiscount: 189.9 },
     { name: 'K-Swiss V8 - Masculino', image: productThumb4, price: 99.9, priceDiscount: null },
-    { name: 'K-Swiss V8 - Masculino', image: productThumb5, price: 200, priceDiscount: 149.9 },
-    { name: 'K-Swiss V8 - Masculino', image: productThumb6, price: 150, priceDiscount: null },
-    { name: 'K-Swiss V8 - Masculino', image: productThumb7, price: 220, priceDiscount: 189.9 },
-    { name: 'K-Swiss V8 - Masculino', image: productThumb8, price: 99.9, priceDiscount: null },
+    { name: 'K-Swiss V8 - Masculino', image: productThumb5, price: 200, priceDiscount: 149.9 }
   ];
 
   return (

@@ -52,7 +52,7 @@ const Header = () => {
           Home
         </NavLink>
         <NavLink
-          to="/products"
+          to="/produtos"
           className={({ isActive }) => (isActive ? styles.activeLink : undefined)}
         >
           Produtos

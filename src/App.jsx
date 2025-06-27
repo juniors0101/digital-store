@@ -1,15 +1,21 @@
-import Paths from "./Routes/Paths";
-import "primereact/resources/themes/lara-light-blue/theme.css";
-import "primeflex/primeflex.css";
-import "primeicons/primeicons.css";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProductListingPage from './pages/ProductListingPage';
+import ProductViewPage from './pages/ProductViewPage';
+// Import other pages as they are created (e.g., LoginPage, RegisterPage, CategoriesPage, MyOrdersPage)
 
-
-const App = () => {
-  return ( 
-    <>
-    <Paths />
-    </>
-   );
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/produtos" element={<ProductListingPage />} />
+        <Route path="/product/:id" element={<ProductViewPage />} />
+       
+      </Routes>
+    </Router>
+  );
 }
- 
+
 export default App;
