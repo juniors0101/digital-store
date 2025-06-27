@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import ProductListingPage from "../Pages/ProductListingPage";
 import ProductViewPage from "../Pages/ProductViewPage";
-import PageLayout from "../layouts/PageLayout";
+import PageLayout from "../Layouts/PageLayout";
 import NotFound from "../Pages/NotFound";
 import Categories from "../Pages/Categories";
 import MyOders from "../Pages/MyOders";
@@ -16,7 +16,7 @@ const Paths = () => {
                 <Routes>
                     <Route path="/" element={<PageLayout />}>
                         <Route path="/" element={<HomePage />} />
-                        <Route path="/produtos" element={<ProductListingPage />} />
+                        <Route path="/products" element={<ProductListingPage />} />
                         <Route path="/produto/:id/:nome" element={<ProductViewPage />} />
                         <Route path="/categorias" element={<Categories />} />
                          <Route path="/meus-pedidos" element={<MyOders />} />

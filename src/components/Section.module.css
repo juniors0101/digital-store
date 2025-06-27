@@ -1,0 +1,46 @@
+.section {
+  max-width: 1440px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sectionHeader.left {
+  justify-content: flex-start;
+}
+
+.sectionHeader.center {
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 24px;
+  color: var(--color-dark-gray-2);
+  margin: 0; /* Reset margin for h2 */
+}
+
+.sectionHeader.center .title {
+  margin-bottom: 10px;
+}
+
+.link {
+  font-size: 18px;
+  color: var(--color-primary);
+  margin-left: auto; /* Pushes link to the right when titleAlign is 'left' */
+}
+
+.sectionHeader.center .link {
+  margin-left: 0; /* Remove auto margin when centered */
+}
+
+.sectionContent {
+  /* Add styling for content within the section if needed */
+}

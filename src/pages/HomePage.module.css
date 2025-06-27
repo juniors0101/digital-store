@@ -1,0 +1,79 @@
+.collectionsGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.collectionItem img {
+  width: 100%; /* Adjust as needed, or set fixed dimensions */
+  max-width: 380px; /* Example max-width */
+  height: auto;
+  border-radius: 4px;
+}
+
+.collectorEditionSection {
+  background-color: var(--color-secondary); /* Or another background color */
+  padding: 60px 20px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collectorEditionContent {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center;
+}
+
+.collectorEditionText {
+  flex: 1;
+  min-width: 300px; /* Minimum width before wrapping */
+  color: var(--color-dark-gray);
+}
+
+.collectorEditionText h2 {
+  font-size: 32px;
+  color: var(--color-dark-gray);
+  margin-bottom: 20px;
+}
+
+.collectorEditionText p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.collectorEditionButton {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 12px 30px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.collectorEditionButton:hover {
+  background-color: var(--color-tertiary);
+}
+
+.collectorEditionImage {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collectorEditionImage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Example radius */
+}

@@ -1,3 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  /* Cores Primarias */
+  --color-primary: #C92071;
+  --color-secondary: #B5B6F2;
+  --color-tertiary: #991956;
+
+  /* Cores de Status */
+  --color-error: #EE4266;
+  --color-success: #52CA76;
+  --color-warning: #F6AA1C;
+
+  /* Tons de Cinza */
+  --color-dark-gray: #1F1F1F;
+  --color-dark-gray-2: #474747;
+  --color-dark-gray-3: #666666;
+  --color-light-gray: #8F8F8F;
+  --color-light-gray-2: #CCCCCC;
+  --color-light-gray-3: #F5F5F5;
+  --color-white: #FFFFFF;
+}
+
+/* Redefinições básicas e estilos globais */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* Example font */
+  color: var(--color-dark-gray);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

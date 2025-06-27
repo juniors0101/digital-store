@@ -1,58 +1,77 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
-import { Badge } from 'primereact/badge';
-import 'primereact/resources/themes/lara-light-pink/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
-import './Header.css';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
+import Logo from '../assets/logo-header.png';
+import styles from './Header.module.css';
+import SearchIcon from '../assets/search.png';
+import CartIcon from '../assets/mini-cart.svg';
 
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const location = useLocation();
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
 
-    const toggleMenu = () => setMenuOpen(!menuOpen);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      navigate(`/products?filter=${searchTerm.trim()}`);
+    }
+  };
 
-    const isActive = (path) => location.pathname === path ? 'active' : '';
+  return (
+    <header className={styles.header}>
+      <div className={styles.topBar}>
+        <img src={Logo} alt="Logo" />
 
-    return (
-        <div className="header-container">
-            <div className="header-top">
-                <div className="logo">
-                    <i className="pi pi-code logo-icon"></i>
-                    <span className="logo-text">Digital Store</span>
-                </div>
+        <form className={styles.searchBar} onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Buscar..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="submit" className={styles.searchButton}>
+            <img src={SearchIcon} alt="Buscar" />
+          </button>
+        </form>
 
-                <div className="search-box">
-                    <span className="p-input-icon-right">
-                        <InputText placeholder="Pesquisar produto..." className="search-input" />
-                        <i className="pi pi-search search-icon" />
-                    </span>
-                </div>
-
-                <div className="user-actions">
-                    <a href="#" className="register-link">Cadastre-se</a>
-                    <Button label="Entrar" className="login-button" />
-                    <div className="cart-icon">
-                        <i className="pi pi-shopping-cart"></i>
-                        <Badge value="2" severity="danger" className="badge" />
-                    </div>
-
-                    <button className="hamburger" onClick={toggleMenu}>
-                        <i className="pi pi-bars"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div className={`header-menu ${menuOpen ? 'show slide' : ''}`}>
-                <Link to="/" className={`menu-item ${isActive('/')}`}>Home</Link>
-                <Link to="/produtos" className={`menu-item ${isActive('/produtos')}`}>Produtos</Link>
-                <Link to="/categorias" className={`menu-item ${isActive('/categorias')}`}>Categorias</Link>
-                <Link to="/meus-pedidos" className={`menu-item ${isActive('/meus-pedidos')}`}>Meus Pedidos</Link>
-            </div>
+        <div className={styles.authLinks}>
+          <Link to="/register" className={styles.registerLink}>
+            Cadastre-se
+          </Link>
+          <Link to="/login" className={styles.loginButton}>
+            Entrar
+          </Link>
+          <img src={CartIcon} alt="Carrinho de Compras" className={styles.cartIcon} />
         </div>
-    );
+      </div>
+
+      <nav className={styles.mainNav}>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? styles.activeLink : undefined)}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/products"
+          className={({ isActive }) => (isActive ? styles.activeLink : undefined)}
+        >
+          Produtos
+        </NavLink>
+        <NavLink
+          to="/categories"
+          className={({ isActive }) => (isActive ? styles.activeLink : undefined)}
+        >
+          Categorias
+        </NavLink>
+        <NavLink
+          to="/my-orders"
+          className={({ isActive }) => (isActive ? styles.activeLink : undefined)}
+        >
+          Meus Pedidos
+        </NavLink>
+      </nav>
+    </header>
+  );
 };
 
 export default Header;
