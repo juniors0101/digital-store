@@ -48,7 +48,7 @@ const HomePage = () => {
         images={slideImages}
         width="1440px"
         height="681px"
-        radius="0" // Assuming no border-radius for main slide
+        radius="0" 
       />
 
       <Section title="Coleções em destaque" titleAlign="center">
