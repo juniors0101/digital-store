@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductCard from '../ProductCard';
+import ProductCard from '../components/ProductCard';
 import styles from './ProductListing.module.css';
 
 const ProductListing = ({ products }) => {

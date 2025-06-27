@@ -6,22 +6,20 @@ import ProductListing from '../components/ProductListing';
 import styles from './HomePage.module.css';
 
 
-import homeSlide1 from '../../assets/images/home-slide-1.jpeg';
-import homeSlide2 from '../../assets/images/home-slide-2.jpeg';
+import homeSlide1 from '../assets/home-slide-1.jpeg';
+import homeSlide2 from '../assets/home-slide-2.jpeg';
 
 
-import collection1 from '../../assets/images/collection-1.png';
-import collection2 from '../../assets/images/collection-2.png';
-import collection3 from '../../assets/images/collection-3.png';
+import collection1 from '../assets/collection-1.png';
+import collection2 from '../assets/collection-2.png';
+import collection3 from '../assets/collection-3.png';
 
-import productThumb1 from '../../assets/images/product-thumb-1.png';
-import productThumb2 from '../../assets/images/product-thumb-2.png';
-import productThumb3 from '../../assets/images/product-thumb-3.png';
-import productThumb4 from '../../assets/images/product-thumb-4.png';
-import productThumb5 from '../../assets/images/product-thumb-5.png';
-import productThumb6 from '../../assets/images/product-thumb-6.png';
-import productThumb7 from '../../assets/images/product-thumb-7.png';
-import productThumb8 from '../../assets/images/product-thumb-8.png';
+import productThumb1 from '../assets/product-thumb-1.jpeg';
+import productThumb2 from '../assets/product-thumb-2.jpeg';
+import productThumb3 from '../assets/product-thumb-3.jpeg';
+import productThumb4 from '../assets/product-thumb-4.jpeg';
+import productThumb5 from '../assets/product-thumb-5.jpeg';
+
 
 const HomePage = () => {
   const slideImages = [

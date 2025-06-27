@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Gallery.module.css';
-import ArrowLeftIcon from '../../assets/icons/arrow-left.svg';
-import ArrowRightIcon from '../../assets/icons/arrow-right.svg';
+import ArrowLeftIcon from '../../assets/arrow-left.svg';
+import ArrowRightIcon from '../../assets/arrow-right.svg';
 
 const Gallery = ({ className, width, height, radius, showThumbs, images = [] }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
