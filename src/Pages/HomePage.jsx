@@ -65,7 +65,7 @@ const HomePage = () => {
         <ProductListing products={trendingProducts} />
       </Section>
 
-      {/* Example for "Air Jordan edição de colecionador" section */}
+
       <section className={styles.collectorEditionSection}>
         <div className={styles.collectorEditionContent}>
           <div className={styles.collectorEditionText}>
