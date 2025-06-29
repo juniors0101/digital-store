@@ -58,7 +58,7 @@ const Header = () => {
           Produtos
         </NavLink>
         <NavLink
-          to="/categories"
+          to="/categorias"
           className={({ isActive }) => (isActive ? styles.activeLink : undefined)}
         >
           Categorias

@@ -22,7 +22,7 @@ const allProducts = [
   { name: 'Adidas Lite Racer 3.0 Men\'s Shoe', image: productThumb3, price: 249.99, priceDiscount: 199.9, category: 'Sneakers', brand: 'Adidas' },
   { name: 'Men\'s Leather Dress Shoe', image: productThumb4, price: 350.00, category: 'Shoes', brand: 'Generic' },
   { name: 'Havaianas Top Sandals', image: productThumb5, price: 39.99, category: 'Sandals', brand: 'Havaianas' }
-  // ... add more products
+  
 ];
 
 const ProductListingPage = () => {
@@ -38,29 +38,24 @@ const ProductListingPage = () => {
 
     let currentProducts = [...allProducts];
 
-    // Apply search filter
     if (filterTerm) {
       currentProducts = currentProducts.filter(product =>
         product.name.toLowerCase().includes(filterTerm.toLowerCase())
       );
     }
 
-    // Apply category filter
     if (selectedCategories.length > 0) {
       currentProducts = currentProducts.filter(product =>
         selectedCategories.includes(product.category)
       );
     }
-
-    // Apply brand filter
+   
     if (selectedBrands.length > 0) {
       currentProducts = currentProducts.filter(product =>
         selectedBrands.includes(product.brand)
       );
     }
 
-
-    // Apply sorting
     if (sortOrder === 'lowest-price') {
       currentProducts.sort((a, b) => (a.priceDiscount || a.price) - (b.priceDiscount || b.price));
     } else if (sortOrder === 'highest-price') {
