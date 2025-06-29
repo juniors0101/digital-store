@@ -64,7 +64,7 @@ const Header = () => {
           Categorias
         </NavLink>
         <NavLink
-          to="/my-orders"
+          to="/meus-pedidos"
           className={({ isActive }) => (isActive ? styles.activeLink : undefined)}
         >
           Meus Pedidos

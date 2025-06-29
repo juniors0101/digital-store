@@ -1,7 +1,7 @@
 import Layout from '../Layouts/PageLayout';
         
 
-const Categories = () => {
+const CategoriesPage = () => {
     return (
         <Layout>
         <h2>Bem-vindo a parte de categorias do site</h2>;
@@ -9,4 +9,4 @@ const Categories = () => {
     );
 }
 
-export default Categories;
+export default CategoriesPage;
