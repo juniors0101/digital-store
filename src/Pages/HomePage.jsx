@@ -46,7 +46,7 @@ const HomePage = () => {
     <Layout>
       <Gallery
         images={slideImages}
-        width="1440px"
+        width="1500px"
         height="681px"
         radius="0" 
       />
