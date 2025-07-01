@@ -34,7 +34,7 @@ const Header = () => {
         </form>
 
         <div className={styles.authLinks}>
-          <Link to="/register" className={styles.registerLink}>
+          <Link to="/registro" className={styles.registerLink}>
             Cadastre-se
           </Link>
           <Link to="/login" className={styles.loginButton}>

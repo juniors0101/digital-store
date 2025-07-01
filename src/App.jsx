@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import CategoriesPage from "./pages/CategoriesPage";
 import ProductListingPage from './pages/ProductListingPage';
 import ProductViewPage from './pages/ProductViewPage';
-// Import other pages as they are created (e.g., LoginPage, RegisterPage, CategoriesPage, MyOrdersPage)
+import MyOders from './pages/MyOders';
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/produtos" element={<ProductListingPage />} />
         <Route path="/categorias" element={<CategoriesPage />} />
-        <Route path="/product/:id" element={<ProductViewPage />} />
-       <Route path="/meus-pedidos" element={<ProductViewPage />} />
+        <Route path="/produto/:id" element={<ProductViewPage />} />
+       <Route path="/meus-pedidos" element={<MyOders />} />
       </Routes>
     </Router>
   );
