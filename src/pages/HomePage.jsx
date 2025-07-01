@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../Layouts/PageLayout';
 import Gallery from '../components/Gallery/Gallery';
-import Section from '../components/Section';
-import ProductListing from '../components/ProductListing';
+import Section from '../components/Section/Section';
+import ProductListing from '../components/ProductListing/ProductListing';
 import styles from './HomePage.module.css';
 import FeaturedCollections from '../components/FeaturedCollections';
 

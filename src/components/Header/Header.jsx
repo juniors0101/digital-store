@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
-import Logo from '../assets/logo-header.png';
+import Logo from '../../assets/logo-header.png';
 import styles from './Header.module.css';
-import SearchIcon from '../assets/search.svg';
-import CartIcon from '../assets/mini-cart.svg';
+import SearchIcon from '../../assets/search.svg';
+import CartIcon from '../../assets/mini-cart.svg';
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState('');

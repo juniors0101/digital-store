@@ -1,17 +1,15 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import styles from './Layout.module.css';
 
 const PageLayout = ({ children }) => {
   return (
-    <div>
-      {/* Componente do cabeçalho */}
+    <div className={styles.layoutContainer}>
       <Header />
-
-      {/* Conteúdo dinâmico das páginas */}
-      {children}
-
-      {/* Componente do rodapé */}
+      <main className={styles.mainContent}>
+        {children}
+      </main>
       <Footer />
     </div>
   );

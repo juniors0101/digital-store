@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Layout from '../Layouts/PageLayout';
-import Section from '../components/Section';
-import ProductListing from '../components/ProductListing';
-import FilterGroup from '../components/FilterGroup';
+import Section from '../components/Section/Section';
+import ProductListing from '../components/ProductListing/ProductListing';
+import FilterGroup from '../components/FilterGroup/FilterGroup';
 import styles from './ProductListingPage.module.css';
 
 

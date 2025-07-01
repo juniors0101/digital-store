@@ -1,10 +1,10 @@
 import React from 'react';
-import Logo from '../assets/logo-footer.svg';
-import InformationGroup from './InformationGroup';
+import Logo from '../../assets/logo-footer.svg';
+import InformationGroup from '../InformationGroup';
 import styles from './Footer.module.css';
-import FacebookIcon from '../assets/facebook.svg';
-import InstagramIcon from '../assets/instagram.svg';
-import TwitterIcon from '../assets/twitter.svg';
+import FacebookIcon from '../../assets/facebook.svg';
+import InstagramIcon from '../../assets/instagram.svg';
+import TwitterIcon from '../../assets/twitter.svg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
