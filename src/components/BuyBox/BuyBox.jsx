@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './BuyBox.module.css';
-import StarIcon from '../assets/star-icon.svg'; 
+import StarIcon from '../../assets/star-icon.svg'; 
 
 const BuyBox = ({ name, reference, stars, rating, price, priceDiscount, description, children }) => {
   return (

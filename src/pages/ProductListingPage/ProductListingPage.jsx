@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Layout from '../Layouts/PageLayout';
-import Section from '../components/Section/Section';
-import ProductListing from '../components/ProductListing/ProductListing';
-import FilterGroup from '../components/FilterGroup/FilterGroup';
+import Layout from '../Layout/Layout';
+import Section from '../../components/Section/Section';
+import ProductListing from '../../components/ProductListing/ProductListing';
+import FilterGroup from '../../components/FilterGroup/FilterGroup';
 import styles from './ProductListingPage.module.css';
 
 
-import productThumb1 from '../assets/images/product-thumb-1.jpeg';
-import productThumb2 from '../assets/images/product-thumb-2.jpeg';
-import productThumb3 from '../assets/images/product-thumb-3.jpeg';
-import productThumb4 from '../assets/images/product-thumb-4.jpeg';
-import productThumb5 from '../assets/images/product-thumb-5.jpeg';
+import productThumb1 from '../../assets/images/product-thumb-1.jpeg';
+import productThumb2 from '../../assets/images/product-thumb-2.jpeg';
+import productThumb3 from '../../assets/images/product-thumb-3.jpeg';
+import productThumb4 from '../../assets/images/product-thumb-4.jpeg';
+import productThumb5 from '../../assets/images/product-thumb-5.jpeg';
 
 
 

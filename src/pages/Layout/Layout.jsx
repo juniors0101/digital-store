@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import styles from './Layout.module.css';
 
-const PageLayout = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div className={styles.layoutContainer}>
       <Header />
@@ -15,4 +15,4 @@ const PageLayout = ({ children }) => {
   );
 };
 
-export default PageLayout;
+export default Layout;

@@ -1,4 +1,4 @@
-import Layout from '../Layouts/PageLayout';
+import Layout from './Layout/Layout';
         
 
 const CategoriesPage = () => {
