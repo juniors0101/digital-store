@@ -1,39 +1,55 @@
 import React from 'react';
-import nikeAirForce from '../assets/images/nike-air-force.png'; // Importe sua imagem localmente
+import nikeAirForce from '../assets/images/nike-air-force.png'; 
+import patternDots from '../assets/images/pattern-dots.svg'; 
 
 const Banner = () => {
   return (
-    <div className="bg-white py-8 md:py-16"> {/* Ajuste o padding vertical para mobile */}
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Seção de Texto */}
-        <div className="text-center md:text-left"> {/* Centraliza texto no mobile, alinha à esquerda no desktop */}
-          <p className="text-sm text-yellow-500 font-semibold uppercase mb-2">Melhores ofertas personalizadas</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight"> {/* Tamanhos de fonte responsivos */}
-            Queima de <span className="text-primary">estoque</span> Nike <span className="inline-block align-middle text-3xl sm:text-4xl lg:text-5xl">🔥</span> {/* Ajusta o tamanho do emoji */}
-          </h2>
-          <p className="text-sm md:text-base text-gray-600 mb-8 max-w-xl mx-auto md:mx-0"> {/* Limita largura e centraliza no mobile */}
+  
+    <div className="relative bg-gray-50 overflow-hidden">
+     
+      <img
+        src={patternDots}
+        alt="Pattern Dots"
+        
+        className="absolute top-0 right-0 w-auto h-auto max-w-[150px] opacity-75 z-0 hidden md:block"
+        style={{ transform: 'translate(30%, -30%)' }} 
+      />
+
+    
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24 flex flex-col md:flex-row items-center justify-between">
+        
+        <div className="flex-1 text-center md:text-left md:pr-10 lg:pr-20 mb-8 md:mb-0">
+          <p className="text-sm font-semibold text-yellow-600 uppercase mb-3">
+            Melhores ofertas personalizadas
+          </p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-5">
+            Queima de <span className="text-primary">estoque</span> Nike <span className="inline-block text-5xl lg:text-6xl align-middle">🔥</span>
+          </h1>
+          <p className="text-base text-gray-600 max-w-md mx-auto md:mx-0 mb-8">
             Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.
           </p>
-          <button className="bg-primary hover:bg-tertiary text-white font-bold py-3 px-6 rounded-md">
+          <button className="bg-primary hover:bg-tertiary text-white font-bold py-3 px-8 rounded-md transition-colors duration-300">
             Ver Ofertas
           </button>
         </div>
 
-        {/* Seção da Imagem */}
-        <div className="flex justify-center md:justify-end order-first md:order-last"> {/* Imagem no topo no mobile, direita no desktop */}
+       
+        <div className="flex-1 flex justify-center md:justify-end min-w-0">
           <img
             src={nikeAirForce}
-            alt="Nike Air Force"
-            className="w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto" // Larguras máximas responsivas
+            alt="Nike Air Force Shoe"
+           
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain transform -rotate-12"
+          
+            style={{ minWidth: '300px', maxWidth: '600px' }}
           />
         </div>
       </div>
 
-      {/* Pontos de Navegação (opcional) */}
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 mt-8 flex justify-center space-x-2">
-        <button className="w-3 h-3 rounded-full bg-primary"></button>
-        <button className="w-3 h-3 rounded-full bg-gray-300"></button>
-        <button className="w-3 h-3 rounded-full bg-gray-300"></button>
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+        <div className="w-3 h-3 rounded-full bg-primary"></div>
+        <div className="w-3 h-3 rounded-full bg-gray-300"></div>
+        <div className="w-3 h-3 rounded-full bg-gray-300"></div>
       </div>
     </div>
   );

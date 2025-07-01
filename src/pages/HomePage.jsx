@@ -4,7 +4,7 @@ import Gallery from '../components/Gallery/Gallery';
 import Section from '../components/Section';
 import ProductListing from '../components/ProductListing';
 import styles from './HomePage.module.css';
-
+import FeaturedCollections from '../components/FeaturedCollections';
 
 import homeSlide1 from '../assets/home-slide-1.jpeg';
 import homeSlide2 from '../assets/home-slide-2.jpeg';
@@ -60,6 +60,8 @@ const HomePage = () => {
           ))}
         </div>
       </Section>
+      
+        <FeaturedCollections />
 
       <Section title="Produtos em alta" titleAlign="left">
         <ProductListing products={trendingProducts} />
