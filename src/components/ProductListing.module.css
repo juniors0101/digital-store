@@ -1,7 +1,6 @@
 .productGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(292px, 1fr)); /* 292px for card width */
-  gap: 20px;
-  justify-content: center; /* Center items if they don't fill the row */
+  grid-template-columns: repeat(auto-fill, minmax(292px, 1fr)); 
+  justify-content: center;
   padding: 20px 0;
 }
