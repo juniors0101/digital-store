@@ -1,3 +1,6 @@
+
+@import "tailwindcss";
+
 :root {
   /* Cores Primarias */
   --color-primary: #C92071;

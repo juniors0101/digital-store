@@ -6,10 +6,6 @@ import ProductListing from '../../components/ProductListing/ProductListing';
 import styles from './HomePage.module.css';
 import FeaturedCollections from '../../components/FeaturedCollections';
 
-import homeSlide1 from '../../assets/home-slide-1.jpeg';
-import homeSlide2 from '../../assets/home-slide-2.jpeg';
-
-
 import collection1 from '../../assets/collection-1.png';
 import collection2 from '../../assets/collection-2.png';
 import collection3 from '../../assets/collection-3.png';
@@ -19,15 +15,11 @@ import productThumb2 from '../../assets/product-thumb-2.jpeg';
 import productThumb3 from '../../assets/product-thumb-3.jpeg';
 import productThumb4 from '../../assets/product-thumb-4.jpeg';
 import productThumb5 from '../../assets/product-thumb-5.jpeg';
+import Banner from '../../components/Banner';
 
 
 const HomePage = () => {
-  const slideImages = [
-    { src: homeSlide1 },
-    { src: homeSlide2 },
   
-  ];
-
   const highlightedCollections = [
     { src: collection1, alt: 'Novo drop Supreme' },
     { src: collection2, alt: 'Coleção Adidas' },
@@ -44,12 +36,7 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <Gallery
-        images={slideImages}
-        width="1500px"
-        height="681px"
-        radius="0" 
-      />
+      <Banner />
 
       <Section title="Coleções em destaque" titleAlign="center">
         <div className={styles.collectionsGrid}>
@@ -60,8 +47,8 @@ const HomePage = () => {
           ))}
         </div>
       </Section>
-      
-        <FeaturedCollections />
+
+      <FeaturedCollections />
 
       <Section title="Produtos em alta" titleAlign="left">
         <ProductListing products={trendingProducts} />

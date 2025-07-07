@@ -1,58 +1,114 @@
-import React from 'react';
-import nikeAirForce from '../assets/images/nike-air-force.png'; 
-import patternDots from '../assets/images/pattern-dots.svg'; 
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const Banner = () => {
+
+export default function Banner() {
+  const [index, setIndex] = useState(0);
+  const [isInteracting, setIsInteracting] = useState(false);
+
+
+  const nextSlide = () => setIndex((prev) => (prev + 1) % bannerSlides.length);
+  const prevSlide = () => setIndex((prev) => (prev - 1 + bannerSlides.length) % bannerSlides.length);
+
+  // Troca automática a cada 6s
+  useEffect(() => {
+    if (isInteracting) return; // ✅ Interrompe autoplay se interagiu
+    const timer = setInterval(() => nextSlide(), 5000);
+    return () => clearInterval(timer);
+  }, [index, isInteracting]);
+
+
+  const bannerSlides = [
+    {
+      id: 1,
+      title: "Chegou a nova coleção de verão!",
+      subtitle: "Roupas leves, confortáveis e com até 40% OFF.",
+      image: "https://images.unsplash.com/photo-1593032457869-ecf95c94f282?auto=format&fit=crop&w=1470&q=80",
+      link: "/produtos",
+    },
+    {
+      id: 2,
+      title: "Tênis estilosos para todos os estilos",
+      subtitle: "Descubra as novidades das melhores marcas.",
+      image: "https://images.unsplash.com/photo-1567016532533-4feaa3b4a0ca?auto=format&fit=crop&w=1470&q=80",
+      link: "/produtos",
+    },
+    {
+      id: 3,
+      title: "Acessórios que completam seu look",
+      subtitle: "Bonés, mochilas e mais com frete grátis.",
+      image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1470&q=80",
+      link: "/produtos",
+    },
+  ];
+
   return (
-  
-    <div className="relative bg-gray-50 overflow-hidden">
-     
-      <img
-        src={patternDots}
-        alt="Pattern Dots"
-        
-        className="absolute top-0 right-0 w-auto h-auto max-w-[150px] opacity-75 z-0 hidden md:block"
-        style={{ transform: 'translate(30%, -30%)' }} 
-      />
+    <section className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+      <AnimatePresence custom={index}>
+        <motion.div
+          key={bannerSlides[index].id}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${bannerSlides[index].image})` }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6 }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={(event, info) => {
+            setIsInteracting(true); // ✅ Pausar autoplay
+            if (info.offset.x < -50) nextSlide();
+            if (info.offset.x > 50) prevSlide();
+          }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center items-start text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-md">
+              {bannerSlides[index].title}
+            </h1>
+            <p className="text-sm sm:text-base md:text-lg mb-6 max-w-md drop-shadow-md">
+              {bannerSlides[index].subtitle}
+            </p>
+            <Link to={bannerSlides[index].link} className="bg-pink-700 hover:bg-pink-800 text-white px-6 py-3 rounded-md font-semibold text-sm shadow-md transition-all">
+              Ver Produtos
+            </Link>
+          </div>
+        </motion.div>
 
-    
-      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24 flex flex-col md:flex-row items-center justify-between">
-        
-        <div className="flex-1 text-center md:text-left md:pr-10 lg:pr-20 mb-8 md:mb-0">
-          <p className="text-sm font-semibold text-yellow-600 uppercase mb-3">
-            Melhores ofertas personalizadas
-          </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-5">
-            Queima de <span className="text-primary">estoque</span> Nike <span className="inline-block text-5xl lg:text-6xl align-middle">🔥</span>
-          </h1>
-          <p className="text-base text-gray-600 max-w-md mx-auto md:mx-0 mb-8">
-            Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.
-          </p>
-          <button className="bg-primary hover:bg-tertiary text-white font-bold py-3 px-8 rounded-md transition-colors duration-300">
-            Ver Ofertas
-          </button>
-        </div>
 
-       
-        <div className="flex-1 flex justify-center md:justify-end min-w-0">
-          <img
-            src={nikeAirForce}
-            alt="Nike Air Force Shoe"
-           
-            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain transform -rotate-12"
-          
-            style={{ minWidth: '300px', maxWidth: '600px' }}
+      </AnimatePresence>
+
+      {/* Indicadores (bolinhas) */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
+        {bannerSlides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              setIndex(i);
+              setIsInteracting(true);
+            }}
+
           />
-        </div>
+        ))}
       </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-        <div className="w-3 h-3 rounded-full bg-primary"></div>
-        <div className="w-3 h-3 rounded-full bg-gray-300"></div>
-        <div className="w-3 h-3 rounded-full bg-gray-300"></div>
-      </div>
-    </div>
+
+      {/* Botões de navegação */}
+      <button
+        className="absolute top-1/2 -translate-y-1/2 left-4 z-20 bg-white bg-opacity-30 hover:bg-opacity-50 p-2 rounded-full"
+        onClick={prevSlide}
+      >
+        <ChevronLeft className="text-white w-5 h-5" />
+      </button>
+      <button
+        className="absolute top-1/2 -translate-y-1/2 right-4 z-20 bg-white bg-opacity-30 hover:bg-opacity-50 p-2 rounded-full"
+        onClick={nextSlide}
+      >
+        <ChevronRight className="text-white w-5 h-5" />
+      </button>
+    </section>
   );
-};
-
-export default Banner;
+}
