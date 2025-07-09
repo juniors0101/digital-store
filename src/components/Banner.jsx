@@ -14,7 +14,7 @@ export default function Banner() {
 
   // Troca automática a cada 6s
   useEffect(() => {
-    if (isInteracting) return; // ✅ Interrompe autoplay se interagiu
+    if (isInteracting) return;
     const timer = setInterval(() => nextSlide(), 5000);
     return () => clearInterval(timer);
   }, [index, isInteracting]);
@@ -25,7 +25,7 @@ export default function Banner() {
       id: 1,
       title: "Chegou a nova coleção de verão!",
       subtitle: "Roupas leves, confortáveis e com até 40% OFF.",
-      image: "https://images.unsplash.com/photo-1593032457869-ecf95c94f282?auto=format&fit=crop&w=1470&q=80",
+      image: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1470&q=80",
       link: "/produtos",
     },
     {
@@ -95,20 +95,6 @@ export default function Banner() {
         ))}
       </div>
 
-
-      {/* Botões de navegação */}
-      <button
-        className="absolute top-1/2 -translate-y-1/2 left-4 z-20 bg-white bg-opacity-30 hover:bg-opacity-50 p-2 rounded-full"
-        onClick={prevSlide}
-      >
-        <ChevronLeft className="text-white w-5 h-5" />
-      </button>
-      <button
-        className="absolute top-1/2 -translate-y-1/2 right-4 z-20 bg-white bg-opacity-30 hover:bg-opacity-50 p-2 rounded-full"
-        onClick={nextSlide}
-      >
-        <ChevronRight className="text-white w-5 h-5" />
-      </button>
     </section>
   );
 }
